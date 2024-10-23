@@ -1,0 +1,2 @@
+* Cuando trabajamos con formularios reactivos necesitamos importar el (ReactiveFormsModule) en el componente o modulo donde lo utilizamos
+* el (FormControl) esta compuesto por valor por defecto seguido de validaciones sincronas y de asincronas.
