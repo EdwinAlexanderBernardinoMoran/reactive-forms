@@ -66,21 +66,29 @@
     <div class="col">
 
         <span>Valid</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.valid | json }}</pre>  <!-- El form tiene que ser valido que tiene todas las validaciones  -->
 
         <span>Pristine</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.pristine | json }}</pre> <!-- Que el form no ha sido ni tocado de ninguna manera -->
 
         <span>Touched</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.touched| json }}</pre> <!-- Que el form no ha sido ni tocado de ninguna manera -->
 
         <span>Value</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.value| json }}</pre> <!-- Muestra los campos del form -->
 
         <span>Precio</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <pre>{{ myForm.controls['price'].value | json }}</pre> <!-- Muestra el valor de un campo -->
 
-        <span>Producto</span>
-        <pre>{{ 'objeto' | json }}</pre>
+        <span>Precio - Error</span>
+        <pre>{{ myForm.controls['price'].errors | json }}</pre> <!-- Muestra los errores de un campo -->
+
+
+        <span>Precio Name</span>
+        <pre>{{ myForm.controls['name'].value | json }}</pre>
+
+        <span>Precio Name</span>
+        <pre>{{ myForm.controls['name'].errors | json }}</pre>
+
     </div>
 </div>
