@@ -16,13 +16,14 @@ export class BasicPageComponent {
 
   // Form builder manera 2
 
-  private fb: FormBuilder = new FormBuilder();
 
   public myForm: FormGroup = this.fb.group({
     name: [''],
     price: [0],
     inStorage: [0],
   });
+
+  constructor(private fb: FormBuilder){}
 
   onSave():void {
     console.log(this.myForm.value);
