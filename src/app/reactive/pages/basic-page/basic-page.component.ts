@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+const laptop = {
+  name: 'Lenovo Ideapad',
+  price: 800,
+  inStorage: 6
+}
 
 @Component({
   templateUrl: './basic-page.component.html',
   styles: ``
 })
-export class BasicPageComponent {
+export class BasicPageComponent implements OnInit{
 
   // Manera 1
   // public myform: FormGroup = new FormGroup({
@@ -15,6 +21,10 @@ export class BasicPageComponent {
   // })
 
   // Form builder manera 2
+
+  ngOnInit(): void {
+      this.myForm.reset(laptop)
+  }
 
 
   public myForm: FormGroup = this.fb.group({
@@ -29,6 +39,12 @@ export class BasicPageComponent {
 
     if (this.myForm.invalid) return;
     console.log(this.myForm.value);
+
+    // si no le pasamos nada deja los valores a cero, en caso podemos pasarle un objeto con las propiedades
+    this.myForm.reset({
+      price: 0,
+      inStorage: 0
+    })
 
   }
 }
